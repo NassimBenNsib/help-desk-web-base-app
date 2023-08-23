@@ -1,0 +1,133 @@
+@host = http://localhost:5000
+@token = eyJhbGciOiJIUzM4NCJ9.ZXlKaGJHY2lPaUpJVXpJMU5pSjkuWlhsS2FHSkhZMmxQYVVwSlZYcE5ORTVEU2prdVdsaHNTMkZIU2toWk1teFFZVlZ3U2xaWWNFcE5WVFZ3VTFoT1NtSnNTVEZaTUU1S1RtdHNjbU5HYUZkUk1HODFURzFXTlZOdGRGcFhSa3B2VTFkd2RtRldjRmxpUlhSb1VqQndTVmRVU25OVlIwWldZMFZ3VjFkSVFsZGFWVlY0WTBaT1dWUnJjR2xpUld0NFYxUkNUMU5yTlhKaVNFcHFVbTFvV0ZWVVFuWk9WWGgwVm1wV1ZHSnJTbWhWVkVKeVRXeE9XR05GU2s1aGVteFpWbXhTUjFkdFZuTmhNM0JWVW14S2RWUlVSbkpsVmxaWlZXczVVMDFWV1hwV1JscE9aVWRHVjJOSVJsZGlXRkpPVm10YVMyTldVblJOVms1cFVtNUNTVlpzVWs5VWJGcEhVbGh3V0ZZeWVFdFpla0p6WkVkS1NWcEZjR2hpVkd4M1YydGFhazFYVG5SVGJsSlFWa1UxY0ZsV1ZuTmxiRTVZVFZVNWFsSXhTa3BaVkVwelZVZEdWbUl6YUZwaVZFVjNXa1prU21Wc2NFbFdhM0JvVjBkU2QxWXhVa3BPVlRGWVUyNVdWbUp0ZUhOV1ZFSnlUV3hPV0U1V1pHdFdNRlkxVkd4b1lXRXdNWEZWYmtKVlVsVTFURnBXV25kWFJuQkpVVzFzVG1Gc1NuZFdSRXB6VXpBeFdGTnVVbXRUUmxwd1ZGUktVMDFXVGxoaVJFNW9WakZLU1ZscmFGTlpWbVJKVVdwS1dtSlVSbGRaVmxVMVkwWk9jVkp0YkdsWFJrbDRWMWR3VDJFeVVsWmlTRUpyVFcxNGFGVnFSbHBsVm14WFdrVTVhVkpYZUhoWmFrcHpWVEZKZUZkcVdscFdSVFZVV2tjeFQxSkdUbGxVYTNCcFlUQndObFl4V205Vk1rcFlVMWh3VkdKc1NrdFpWekExWTBad1IxbDZSbXBpVlhBd1ZERlNUMkZYUmxaaVNIQlVWbnBCTVZwWGRITmpWMGw1WWtkMFYyVnNXalZYVnpCM1RsVXdlVk51UWxSWFJUVkxXV3hXZDA1V2JIRlViWFJzWWtoQ1dsVXhaSE5WUjBaV1lqTm9XbUpVUlhkYVJtUktaV3h3U1ZacmNHaFhSMUozVjJ0amVGWXlWbGhVV0d4cFUwWndjRmxXVm5KTmJFNVlUbFprYTFZd1ZqVlViR2hoWVRBeGNWVnVRbFZTVlRWTVdXdGtWMU5XUm5WUmJYQnBWbXh2TWxaWGRHOVdNbFpYWWtac1ZtSnJTbkJVVjNCVFkwWlJlV0pGY0d4V1ZGWldXVlJPYzFSc1NrWlNhazVWVmxaS1ExcEVRbk5qUjFGNVlrZHdhVlpzYkRWWFYzQkxUVWRLUjJORlVsUldSbkJvV1d4V1lXVnNiRFpUYkZwcVRVZDRNVlp0TlhkWlZtUkdZMFYwV0dFd05VdFViWFJ6WkVaa1ZWRnJPVk5TTURFMlZrYzFkMU15UmxabFJtaFRZbGhDVVZWcVFsZE5SbEp5Vld0T2FWWlVWVEZVVm1SelZERmFSMVpxVGxWU2JWSllXVmR6ZUZOR1duUk5WMFpUVFVkemVGWkhlRk5qTWtaellrUldWRmRGTlV0WmJGVXhUbFprYzFwRlpFNVNia0paVmxkMFMyRXhSWGRoZWtwVVZqTkNTMXBFUVhoalZsSlpWV3MxVTFJeVVYZFdSbFpUWWpGYVZrMVZWbEpXUm5CUFdWY3hhazFzVW5KVmJrcHJWbFJGTWxaR1VrOVhSMFpXWWtod1ZGWjZWbGhhUkVaM1UwWktjVkZ0UmxkTlZYQkVWMnRXVDFOck5YSmlTRVpVVjBkU1QxbFhjM2hOUmxKV1ZXMDFhMUpVUmtaWlZWcFhWR3hLUmxKVVNsVldNMEoxVkcxek1WSlhSWHBXYXpWc1lYcENObFpxU25OVGJVMTNZa2hTYVZJeWFISlZWRUp5VFd4U1YxVnNjRTlXVkVaV1ZsWlNSMVF4U2tkV2FsWlZUVmRrTTFSSE1XdFNSbVJIVVd4U1YxWnRlR2hWZWtKSFZWWk5kMXBHWkZOaVJsa3dXbFpTYjFaWFZraFBWelZWWVRCd1NGUldWVEZXVmxsNVZHeEdXRlpyTlhSWFZFcFhWbFUxY1Zkc1ZteFRSM2gzVmtSQ2IxSnRSbGxqUldScFYwVnNObFl5TVZKbFIwNUdUVlJXV0ZZeFZYbFVWekZhWlVVeFdFNVhlR3RSZWtaYVZsVmtkMVZzU1hkTlYzUnNWakJ3TmxsVlZuTlViR3h4VW14S1NtRllaSEJYYkdodlpESkdXVk50ZUdwTlJrbDRXVEl4UjAxSFJsaFBXRlpLWVcwNU5WUnNVbkpsVlRGRlVWaGtUbEpGUmpOVVJVNUxZMFpzV1ZWWGJGQmhhMVY1VkRGU1JrMUZOVlZWVkVaT1lXMTNOVXh0V2tsaFdGWk9WMnBLYUZKV2IzUmxSV1F3VWtjMVVtRlVaREZVUm1ScllVVmtNbEZYU2xSVVZHeHhZVlJzZVZGc1pFdFVWR016VGtSUkxtTkJVVGhwTlVGYVpWZHNkSGhtZVRKUVNGUm9hMDFsUzBVMlVVNXhTMTl2T0ZadlVWUnRibFEzZUZkRk4yMW5lV3Q1TUZoNGJXZFNXRjlsVW1SUWVTMC4tR1huM1ZqYkh5UENDT3dEU2VtN2puc1JkZldfd1g3NEs3ZktSMk5IRE5B.gZfx-5q7mm-kaaKrFhZLeIXpWwxRQzkmCDbv19Zg215E52YWgpYGQxNbZj9yxqx1
+#################################################################################### 
+########################                                    ########################
+########################    Change General Information      ########################
+########################                                    ########################
+#################################################################################### 
+PUT {{host}}/api/v1/user-settings/change-general-information
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "firstName": "Nassim",
+  "lastName": "Ben Nsib",
+  "country": "United States",
+  "city": "Nabeul",
+  "address": "Nabeul",
+  "email": "normal@example.com",
+  "phoneNumber": "+87897745664",
+  "birthday": "1980-05-20",
+  "organization": "Nassim Cop",
+  "position": "CEO",
+  "department": "Administration",
+  "zipPostalCode": "5000 TYG"
+}
+
+#################################################################################### 
+########################                                    ########################
+########################          Revoke Sessions           ########################
+########################                                    ########################
+#################################################################################### 
+PUT {{host}}/api/v1/user-settings/revoke-sessions
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "sessionsIds": [
+  "b68e2e30-c83e-43a5-a044-bb1b44b8c713",
+  "65b5f503-f627-4758-9ab6-b014c6871406"
+  ]
+}
+
+#################################################################################### 
+########################                                    ########################
+########################      Change Email Preference       ########################
+########################                                    ########################
+#################################################################################### 
+PUT {{host}}/api/v1/user-settings/change-email-preference
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "newsletter" : true,
+  "tickets" : true,
+  "messages" : true,
+  "virtualAssistant" : true,
+  "accountActivity" : true,
+  "usersActivity" : true
+}
+
+#################################################################################### 
+########################                                    ########################
+########################  Change Notification Preference    ########################
+########################                                    ########################
+#################################################################################### 
+PUT {{host}}/api/v1/user-settings/change-notification-preference
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "newsletter" : true,
+  "tickets" : true,
+  "messages" : true,
+  "virtualAssistant" : true,
+  "accountActivity" : true,
+  "usersActivity" : true
+}
+
+#################################################################################### 
+########################                                    ########################
+########################            Change Password         ########################
+########################                                    ########################
+#################################################################################### 
+PUT {{host}}/api/v1/user-settings/change-password
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "oldPassword" : "+12345678sMn%++++",
+  "newPassword" : "+12345678sMn%+++++",
+  "passwordConfirmation" : "+12345678sMn%+++++"
+}
+
+#################################################################################### 
+########################                                    ########################
+########################            Change Password         ########################
+########################                                    ########################
+#################################################################################### 
+PUT {{host}}/api/v1/user-settings/change-general-preference
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "language":"English",
+  "fontSize": 16,
+  "timeZone": "GMT+0 Greenwich Mean Time (GMT)",
+  "theme": "Light"
+}
+
+
+#################################################################################### 
+########################                                    ########################
+########################              GET PROFILE           ########################
+########################                                    ########################
+#################################################################################### 
+POST {{host}}/api/v1/user-settings/get-profile
+Authorization: Bearer {{token}}
+
+####################################################################################
+########################                                    ########################
+########################       Change Profile Pictutre      ########################
+########################                                    ########################
+####################################################################################
+PUT {{host}}/api/v1/user-settings/change-profile-picture
+Authorization: Bearer {{token}}
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryABC123
+
+----WebKitFormBoundaryABC123
+Content-Disposition: form-data; name="file"; filename="example.txt"
+
+Hello, this is an example file content.
+
+----WebKitFormBoundaryABC123--

@@ -1,0 +1,236 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("SERVER_DATABASE_BASE_URL")
+}
+
+model User {
+  // Personal information
+  id                     String                  @id @default(uuid())
+  firstName              String?
+  lastName               String?
+  birthday               DateTime?
+  profilePicture         String?
+  // Account information
+  role                   UserRole                @default(USER)
+  status                 UserStatus              @default(UNVERIFIED)
+  password               String
+  salt                   String
+  // Contact information
+  email                  String                  @unique
+  phoneNumber            String?                 @unique
+  // Address information
+  country                String?
+  city                   String?
+  address                String?
+  zipPostalCode          String?
+  // Professional information
+  organization           String?
+  department             String?
+  position               String?
+  // Other information
+  createdAt              DateTime                @default(now())
+  updatedAt              DateTime                @updatedAt
+  // Tickets
+  tickets                Ticket[]
+  // Security & Privacy & Preferences
+  sessions               Session[]
+  forgetPassword         ForgetPassword[]
+  notificationPreference NotificationPreference?
+  emailPreference        EmailPreference?
+  generalPreference      GeneralPreference?
+  // Files
+  files                  File[]
+
+  @@index([firstName], name: "firstName")
+  @@index([lastName], name: "lastName")
+  @@index([email], name: "email")
+  @@index([phoneNumber], name: "phoneNumber")
+}
+
+model Ticket {
+  id          String         @id @default(uuid())
+  // Information
+  title       String
+  description String
+  status      TicketStatus   @default(UNTOUCHED)
+  priority    TicketPriority @default(MEDIUM)
+  tags        String         @db.VarChar(1000)
+  category    TicketCategory @default(GENERAL_INQUIRY)
+  // Dates
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+  // Files
+  files       File[]         @relation("Ticket")
+  // Owner
+  user        User           @relation(fields: [userId], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  userId      String
+}
+
+model ForgetPassword {
+  id              String   @id @default(uuid())
+  // Information
+  code            String   @default(uuid())
+  // Owner
+  user            User     @relation(fields: [userId], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  userId          String
+  // Dates
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  expiresDuration String
+}
+
+model Session {
+  id              String   @id @default(uuid())
+  // Information
+  ip              String
+  city            String
+  country         String
+  region          String
+  timezone        String
+  device          String
+  platform        String
+  os              String
+  browser         String
+  version         String
+  // Session expiration/revocation
+  expiresDuration String
+  revoked         Boolean  @default(false)
+  // Owner
+  user            User     @relation(fields: [userId], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  userId          String
+  // Dates
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model NotificationPreference {
+  id               String   @id @default(uuid())
+  // Notifications
+  newsletter       Boolean  @default(true)
+  tickets          Boolean  @default(true)
+  messages         Boolean  @default(true)
+  virtualAssistant Boolean  @default(true)
+  accountActivity  Boolean  @default(true)
+  usersActivity    Boolean  @default(true)
+  // Owner
+  user             User     @relation(fields: [userId], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  userId           String   @unique
+  // Dates
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model EmailPreference {
+  id               String   @id @default(uuid())
+  // Emails
+  newsletter       Boolean  @default(true)
+  tickets          Boolean  @default(true)
+  messages         Boolean  @default(true)
+  virtualAssistant Boolean  @default(true)
+  accountActivity  Boolean  @default(true)
+  usersActivity    Boolean  @default(true)
+  // Owner
+  user             User     @relation(fields: [userId], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  userId           String   @unique
+  // Dates
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model GeneralPreference {
+  id        String   @id @default(uuid())
+  // Apparence
+  theme     String   @default("System")
+  language  String   @default("English")
+  timeZone  String   @default("GMT+0 Greenwich Mean Time (GMT)")
+  fontSize  Int      @default(16)
+  // Owner
+  user      User     @relation(fields: [userId], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  userId    String   @unique
+  // Dates
+  createdAt DateTime @default(now())
+  updateAt  DateTime @updatedAt
+}
+
+model File {
+  id        String   @id @default(uuid())
+  // Information  
+  name      String?
+  type      FileType @default(IMAGE)
+  format    String?
+  size      Int?
+  url       String
+  // Owner
+  user      User?    @relation(fields: [userId], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  userId    String?
+  // Ticket
+  Ticket    Ticket?  @relation("Ticket", fields: [ticketId], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  ticketId  String?
+  // audioTicket      Ticket?  @relation("audioTicket", fields: [audioTicketId], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  // audioTicketId    String?
+  // VideoTicket      Ticket?  @relation("videoTicket", fields: [videoTicketId], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  // videoTicketId    String?
+  // documentTicket   Ticket?  @relation("documentTicket", fields: [documentTicketId], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  // documentTicketId String?
+  // Dates
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum UserRole {
+  SUPER_ADMIN
+  ADMIN
+  USER
+}
+
+enum UserStatus {
+  ACTIVE
+  BANNED
+  UNVERIFIED
+  UNCOMPLETED
+}
+
+enum TicketPriority {
+  LOW
+  MEDIUM
+  HIGH
+  URGENT
+}
+
+enum TicketStatus {
+  UNTOUCHED
+  OPENED
+  PENDING
+  SOLVED
+  CLOSED
+}
+
+enum TicketCategory {
+  GENERAL_INQUIRY
+  TECHNICAL_ISSUE
+  BUG_REPORT
+  NEW_FEATURE_REQUEST
+  NEW_PROJECT_REQUEST
+  ACCOUNT_INQUIRY
+  TRAINING_REQUEST
+  FEEDBACK_AND_SUGGESTION
+}
+
+enum FileType {
+  IMAGE
+  VIDEO
+  DOCUMENT
+}
+
+// enum 
+// "TECHNICAL_ISSUE" = "TECHNICAL ISSUE", //A problem related to software, hardware, or technical functionality.
+//   "BUG_REPORT" = "BUG REPORT", // Reporting a software defect or unexpected behavior.
+//   "FEATURE_REQUEST" = "FEATURE REQUEST", // A request for a new feature or enhancement to an existing functionality.
+//   "ACCOUNT_INQUIRY" = "ACCOUNT INQUIRY", // Questions or requests related to user accounts, billing, or subscription.
+//   "TRAINING_REQUEST" = "TRAINING REQUEST", // Requesting user guides or training materials
+//   "NEW_PROJECT_REQUEST" = "NEW PROJECT REQUEST", // Requesting a new project or initiative.
+//   "GENERAL_INQUIRY" = "GENERAL INQUIRY", // A general request or question that 

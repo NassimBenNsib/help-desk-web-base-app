@@ -1,0 +1,3 @@
+class TicketsEmailTemplates {}
+
+export { TicketsEmailTemplates };

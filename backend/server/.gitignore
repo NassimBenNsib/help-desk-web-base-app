@@ -1,0 +1,18 @@
+# Testing
+coverage/*
+
+# Production
+dist/*
+
+
+# Database
+prisma/migrations
+
+# Local env files
+.env
+
+# Dependency 
+node_modules
+yarn.lock
+yarn-error.log
+package-lock.json

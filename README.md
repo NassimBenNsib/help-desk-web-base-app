@@ -26,6 +26,8 @@
     
     *   Define and manage user roles and permissions.
     *   Implement role-based access control (RBAC) for various parts of the application.
+7. **User Management**
+   1. 
 
 ### B- Design and Architecture:
 
@@ -450,191 +452,22 @@ NEXT_PUBLIC_BACKEND_API_VERSION=
 NEXT_PUBLIC_MODE=
 ```
 ##### c- Screenshot
-![Chatbot](/screenshots/chatbot.png?raw=true)
-![Settings](/screenshots/settings.png?raw=true)
-![Tickets](/screenshots/tickets-1.png?raw=true)
-![Tickets](/screenshots/tickets-2.png?raw=true)
+
+![Register](docs/screenshots/register.png?raw=true)
+![Login](docs/screenshots/login.png?raw=true)
+![Forget Password](docs/screenshots/forget-password.png?raw=true)
+![Reset Password](docs/screenshots/reset-password.png?raw=true)
+![Tickets](docs/screenshots/ticket-management.png?raw=true)
+![Tickets](docs/screenshots//ticket-details.png?raw=true)
+![Settings](docs/screenshots/profile-settings.png?raw=true)
+![Chatbot](docs/screenshots/chatbot.png?raw=true)
 
 ## III- Architecture & UML
 
 ### UML
-
 #### Use Case Diagram
-#### Class Diagram
-```mermaid
----
-title: Help Desk Class Diagram
----
-classDiagram
-    File -- Ticket
-    File -- Ticket
-    File -- Ticket
-    Account -- File
-    Ticket -- Tag
-    Ticket -- Account
-    Account -- Profile
-    Account -- NotificationPreference
-    Account -- NotificationPreference
-    Account -- GeneralPreference
-    Session -- Account
-    ForgetPassword -- Account
-
-    namespace Accounts {
-        class AccountStatus{
-            <<enumeration>>
-            ACTIVE
-            BANNED
-            UNVERIFIED
-            UNCOMPLETED
-        }
-        class Account{
-            -id : String
-            -email : String
-            -salt : String
-            -password : String
-            -role : AccountRole
-            -status : AccountStatus 
-        }
-        class AccountRole{
-            <<enumeration>>
-            SUPER_ADMIN
-            ADMIN
-            USER
-        }
-    }
-    namespace   Tickets{
-        class Ticket{
-            -id : String
-            -title : String
-            -description : String
-            -status : TicketStatus
-            -priority : TicketPriority
-            -category : TicketCategory
-            -createdAt : DateTime
-            -updatedAt : DateTime
-        }
-        class TicketPriority {
-            <<enumeration>>
-            LOW
-            MEDIUM
-            HIGH
-            URGENT
-        }
-        class TicketStatus {
-            <<enumeration>>
-            UNTOUCHED
-            OPENED
-            PENDING
-            SOLVED
-            CLOSED
-        }
-        class TicketCategory {
-            <<enumeration>>
-            GENERAL_INQUIRY
-            TECHNICAL_ISSUE
-            BUG_REPORT
-            NEW_FEATURE_REQUEST
-            NEW_PROJECT_REQUEST
-            ACCOUNT_INQUIRY
-            TRAINING_REQUEST
-            FEEDBACK_AND_SUGGESTION
-        }
-        class Tag{
-            -id : String
-            -content : String
-        }
-    }
-    namespace Settings {
-        class Profile{
-            -id : String
-            -firstName : String
-            -lastName : String
-            -birthDate : Date
-            -phoneNumber : String
-            -country : String
-            -city : String
-            -address : String
-            -zipPostalCode : String
-            -organization : String
-            -department : String
-            -position : String
-            -createdAt : DateTime
-            -updatedAt : DateTime
-        }
-        class NotificationPreference {
-            -newsletter : Boolean
-            -ticketUpdates : Boolean
-            -messages : Boolean
-            -virtualAssistant : Boolean
-            -accountActivity
-            -createdAt : DateTime
-            -updatedAt : DateTime
-        }
-        class GeneralPreference{
-            -id : String
-            -theme : String
-            -language : String
-            -timezone : String
-            -fontFamily : String
-            -fontSize : Integer
-        }
-    }
-    namespace Authentication{
-        class Session{
-            -id : String
-            -ip : String
-            -country : String
-            -region : String
-            -city : String
-            -timezone : String
-            -platform : String
-            -os : String
-            -browser : String
-            -browserVersion : String
-            -isRevoked : Boolean
-            -createAt : DateTime
-            -updateAt : DateTime
-            -expiredAt : DateTime
-        }
-        class ForgetPassword{
-            -id : String
-            -code : String
-            -createdAt : DateTime
-            -updatedAt : DateTime
-            -expiredAt : DateTime
-        }
-    }
-    namespace Files{
-        class File{
-            -id : String
-            -name : String
-            -type : FileType
-            -format : String
-            -url : String
-            -size : Integer
-            -createdAt : DateTime
-            -updateAt : DateTime
-        }
-        class FileType {
-            <<enumeration>>
-            IMAGE
-            VIDEO
-            DOCUMENT
-        }
-    }
-```
-
-<!-- 1. UML
-   1.  Use case
-   2.  Details about 3 use case
-       1.  Sign up
-       2.  Reset Password
-       3.  Create Ticket
-   3.  Class
-   4.  Sequence
-   5.  
-1.  Architecture
-2.  Folder Structure -->
-
-
-
+![Class Diagram](docs/uml/images/class-diagram.png)
+#### Entity Relationship Diagram 
+![Entity Relationship Diagram](docs/uml/images/entity-relationship-diagram.png)
+#### Entity Relationship Details Diagram 
+![Entity Relationship Details Diagram](docs/uml/images/entity-relationship-details-diagram.png)

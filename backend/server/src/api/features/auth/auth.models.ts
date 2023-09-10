@@ -1,3 +1,0 @@
-class AuthModel {}
-
-export { AuthModel };

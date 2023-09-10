@@ -471,3 +471,36 @@ NEXT_PUBLIC_MODE=
 ![Entity Relationship Diagram](docs/uml/images/entity-relationship-diagram.png)
 #### Entity Relationship Details Diagram 
 ![Entity Relationship Details Diagram](docs/uml/images/entity-relationship-details-diagram.png)
+
+## IV- Tools
+-   Development
+    -   [VS Code](https://code.visualstudio.com/)
+    -   Frontend
+        -   [ReactJS](https://react.dev/)
+        -   [NextJS](https://nextjs.org/)
+        -   [Typescript](https://www.typescriptlang.org/)
+        -   [TailwindCSS](https://tailwindcss.com/)
+        -   [Shadcn/ui](https://ui.shadcn.com/)
+    -   Backend
+        -   [NodeJS](https://nodejs.org/)
+        -   [ExpressJS](https://expressjs.com/)
+        -   [Typescript](https://www.typescriptlang.org/)
+        -   [Open API](https://openai.com/) (ChatGPT) 
+-   Versioning
+    -   [GitHub](https://github.com/)
+    -   [Git](https://git-scm.com/)
+-   Database
+    -   [MySQL](https://www.mysql.com/)
+    -   [Prisma](https://www.prisma.io/)
+    -   [Prisma Studio](https://www.prisma.io/studio)
+- Testing
+  - [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) (VS Code Extension) 
+  - [Jest](https://jestjs.io/)
+-   Project Management & Collaboration
+    -   [Trello](https://trello.com/)
+    -   [Google Meet](https://meet.google.com/)
+- Documentation
+    - [Mermaid](https://mermaid.js.org/) (Language & Editor )
+            - Diagrams (class diagram, git graph, entity relationship)
+    - [Draw.io](https://draw.io/) (use case diagrams)
+    - [UML](https://www.uml.org/)

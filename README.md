@@ -451,8 +451,10 @@ NEXT_PUBLIC_BACKEND_API_VERSION=
 # Application variables
 NEXT_PUBLIC_MODE=
 ```
-##### c- Screenshot
+## III- Screenshot
 
+
+![Company Logo](docs/others/logo.png)
 ![Register](docs/screenshots/register.png?raw=true)
 ![Login](docs/screenshots/login.png?raw=true)
 ![Forget Password](docs/screenshots/forget-password.png?raw=true)
@@ -462,7 +464,7 @@ NEXT_PUBLIC_MODE=
 ![Settings](docs/screenshots/profile-settings.png?raw=true)
 ![Chatbot](docs/screenshots/chatbot.png?raw=true)
 
-## III- Architecture & UML
+## IV- Architecture & UML
 
 ### UML
 #### Use Case Diagram
@@ -480,7 +482,7 @@ NEXT_PUBLIC_MODE=
 #### Frontend
 ![Frontend Folder Structure](docs/diagrams/images/frontend-folder-structure.png)
 
-## IV- Tools
+## V- Tools
 -   Development
     -   [VS Code](https://code.visualstudio.com/)
     -   Frontend

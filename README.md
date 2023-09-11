@@ -466,6 +466,8 @@ NEXT_PUBLIC_MODE=
 
 ### UML
 #### Use Case Diagram
+![Use Case Diagram](docs/diagrams/images/use-case-diagram.png)
+#### Class Diagram
 ![Class Diagram](docs/diagrams/images/class-diagram.png)
 #### Entity Relationship Diagram 
 ![Entity Relationship Diagram](docs/diagrams/images/entity-relationship-diagram.png)

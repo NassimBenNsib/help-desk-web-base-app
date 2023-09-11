@@ -466,11 +466,17 @@ NEXT_PUBLIC_MODE=
 
 ### UML
 #### Use Case Diagram
-![Class Diagram](docs/uml/images/class-diagram.png)
+![Class Diagram](docs/diagrams/images/class-diagram.png)
 #### Entity Relationship Diagram 
-![Entity Relationship Diagram](docs/uml/images/entity-relationship-diagram.png)
+![Entity Relationship Diagram](docs/diagrams/images/entity-relationship-diagram.png)
 #### Entity Relationship Details Diagram 
-![Entity Relationship Details Diagram](docs/uml/images/entity-relationship-details-diagram.png)
+![Entity Relationship Details Diagram](docs/diagrams/images/entity-relationship-details-diagram.png)
+
+### Folder Structure
+#### Backend
+![Backend Folder Structure](docs/diagrams/images/backend-folder-structure.png)
+#### Frontend
+![Frontend Folder Structure](docs/diagrams/images/frontend-folder-structure.png)
 
 ## IV- Tools
 -   Development

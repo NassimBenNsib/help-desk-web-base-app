@@ -19,7 +19,7 @@ import {
   CorsUtils,
   UsersSettingsRoutes,
   TicketsRoutes,
-} from "../../lib/internal.lib";
+} from "./../../lib/internal.lib";
 
 class ApplicationCore {
   private static local_instance: Application | null = null;

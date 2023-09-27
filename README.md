@@ -469,12 +469,42 @@ NEXT_PUBLIC_MODE=
 ### UML
 #### Use Case Diagram
 ![Use Case Diagram](docs/diagrams/images/use-case-diagram.png)
+![Manage Settings Use Case Diagram](docs/diagrams/images/use-case-diagram-manage-settings.png)
+![Manage Users Use Case Diagram](docs/diagrams/images/use-case-diagram-manage-users.png)
+![Recover Password Use Case Diagram](docs/diagrams/images/use-case-diagram-recovery-password.png)
 #### Class Diagram
 ![Class Diagram](docs/diagrams/images/class-diagram.png)
 #### Entity Relationship Diagram 
 ![Entity Relationship Diagram](docs/diagrams/images/entity-relationship-diagram.png)
 #### Entity Relationship Details Diagram 
+The ER diagram above represents the structure of key entities, attributes and relationships in our system. The diagram was developed to provide a visual illustration of how data is organized and interconnected within the system.
+
+1-  **NotificationPreference**
+This entity represents a user's notification preferences, which define what type of notifications the user wishes to receive. These preferences include options such as newsletters, ticket notifications, messages, account activities and user activities.
+
+2-  **EmailNotificationPreference** 
+This entity is an extension of "NotificationPreference" and represents preferences specific to e-mail notifications. It is used to manage preferences concerning notifications sent by e-mail.
+
+3-  **GeneralPreference**
+General user preferences are stored in this entity. They include settings such as theme, language, time zone and font size.
+
+4-  **File**
+The "File" entity represents files downloaded or attached to the system. Attributes include details of file name, type, format, size and URL.
+
+5-  **Ticket**
+This entity is used to manage tickets or service requests submitted by users. Attributes include information such as ticket title, description, status, priority, tags and category.
+
+6-  **User**
+The "User" entity represents system users. It stores personal information such as name, date of birth, etc.
+
 ![Entity Relationship Details Diagram](docs/diagrams/images/entity-relationship-details-diagram.png)
+
+-   |o	o| :	Zero or one
+-   ||	|| :	Exactly one
+-   }o	o{ :	Zero or more (no upper limit)
+-   }|	|{ :	One or more (no upper limit)
+
+This ER diagram provides a detailed view of the system's data structure, showing how entities relate to each other and how user data, notification preferences, tickets, files and sessions are managed and organized. This visual representation is invaluable for understanding how data is stored and interacts within the system.
 
 ### Folder Structure
 #### Backend

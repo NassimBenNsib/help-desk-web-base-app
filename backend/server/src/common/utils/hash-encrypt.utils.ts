@@ -3,12 +3,12 @@ import {
   jwt,
   JWTAlgorithm,
   JwtPayload,
-} from "../../../../lib/external.lib";
+} from "../../../lib/external.lib";
 import {
   ConsoleUtils,
   JWT_CONFIG,
   SESSIONS_CONFIG,
-} from "../../../../lib/internal.lib";
+} from "../../../lib/internal.lib";
 
 class HashEncryptUtils {
   private static readonly JWT_ALGORITHMS: Array<JWTAlgorithm> = [

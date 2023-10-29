@@ -217,19 +217,30 @@ sequenceDiagram
     Frontend -->> User: Return the dashboard
 ```
 
-### II.2 Diagramme de sequence de le cas d'utlisation de << Create ticket >>
+### II.3 Diagramme de sequence de le cas d'utlisation de << Create ticket >>
 ```mermaid
 sequenceDiagram
     participant User
     participant Frontend
     participant Backend
     participant DB
-    participant EmailProvider
     autonumber
 
+    User ->> Frontend: Request ticket management page
+    Frontend -->> User: Return the ticket management page
+    User ->> Frontend: Click the "Add Ticket" button
+    Frontend -->> User: Open a modal
+    User ->> Frontend: Fill in the form
+    Frontend ->> Frontend: Validate all fields
+    Frontend ->> Backend: Send a request to add a new ticket
+    Backend ->> Backend: Verify authentication
+    Backend ->> Backend: Verify permissions
+    Backend ->> DB: Save the new ticket in the database
+    DB --> Backend: Return new ticket record
+    Backend -->> Frontend: Return the ticket ID
+    Frontend ->> Frontend: Close the modal
+    Frontend -->> User: Display a success message
 
 ```
 
-1- Utilisateur demander la page de gestion des tickets (Frontend)
-2- Frontennd retrouner la page
 

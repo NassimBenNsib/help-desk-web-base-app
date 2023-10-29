@@ -1,10 +1,10 @@
-## X.Y Diagrammes des cas d’utilisation
+## I Diagrammes des cas d’utilisation
 
 > <img src="docs/diagrams/images/use-case-diagram.png" title="" alt="Use Case Diagram" data-align="center">
 
 ### X.Y.1 Description textuelle du cas d’utilisation « Gestion des utilisateurs» :
 
-> <img title="" src="file:///E:/Projects/pro/HelpDesk-NextJS-ExpressJS-MySQL/docs/diagrams/images/use-case-diagram-manage-users.png" alt="Use Case Diagram" data-align="center">
+> <img title="" src="/docs/diagrams/images/use-case-diagram-manage-users.png" alt="Use Case Diagram" data-align="center">
 > 
 > **Tableau x.y.1** Description textuelle du cas d’utilisation « Gestion des utilisateurs »
 > 
@@ -48,7 +48,7 @@
 
 ### X.Y.2 Description textuelle du cas d’utilisation « Gestion des paramètres » :
 
-> <img title="" src="file:///E:/Projects/pro/HelpDesk-NextJS-ExpressJS-MySQL/docs/diagrams/images/use-case-diagram-manage-settings.png" alt="Use Case Diagram" data-align="center">
+> <img title="" src="/docs/diagrams/images/use-case-diagram-manage-settings.png" alt="Use Case Diagram" data-align="center">
 > 
 > **Tableau x.y.1** Description textuelle du cas d’utilisation « Gestion des paramètres »
 > 
@@ -98,7 +98,7 @@
 
 ## X.Y.2 Description textuelle du cas d’utilisation « Récupération de mot de passe » :
 
-> <img title="" src="file:///E:/Projects/pro/HelpDesk-NextJS-ExpressJS-MySQL/docs/diagrams/images/use-case-diagram-recovery-password.png" alt="Use Case Diagram" data-align="center">
+> <img title="" src="/docs/diagrams/images/use-case-diagram-recovery-password.png" alt="Use Case Diagram" data-align="center">
 > 
 > **Tableau x.y.1** Description textuelle du cas d’utilisation « Récupération de mot de passe »
 > 
@@ -145,10 +145,91 @@
 > - Si l'adresse e-mail n'est pas associée à un compte, le système affiche un message d'erreur.
 > - Si le code de réinitialisation est invalide, le système affiche un message d'erreur et invite l'utilisateur à réessayer la récupération de mot de passe.
 
+
+## II Diagrammes des séquences
+### II.1 Diagramme de sequence de le cas d'utlisation de << Recover password >>
 ```mermaid
 sequenceDiagram
+    participant User
+    participant Frontend
+    participant Backend
+    participant DB
+    participant EmailProvider
+    autonumber
 
- Alice->>John: Hello John, how are you?
- John-->>Alice: Great!
- Alice-)John: See you later!
+    User ->> Frontend: Request "Forgot My Password" page
+    Frontend -->> User: Return password reset form
+
+    User ->> Frontend: Enter email
+    Frontend ->> Frontend: Validate email format
+    Frontend ->> Backend: Send password reset request
+    Backend ->> Backend: Validate the email
+    Backend ->> DB: Check for an account with the provided email
+    DB -->> Backend: Return account details
+
+    Backend ->> Backend: Generate a unique code
+    Backend ->> DB: Save the unique code
+    Backend ->> EmailProvider: Send the unique code
+    EmailProvider -->> User: Return the code
+
+    User ->> Frontend: Enter the unique code
+    Frontend ->> Backend: Request "Change Password" page
+    Backend -->> Frontend: Return password change form
+    User ->> Frontend: Enter a new password
+    Frontend ->> Frontend: Validate password criteria
+    Frontend ->> Backend: Send the password change request
+    Backend ->> DB: Delete the unique code
+    Backend ->> Backend: Hash the new password
+    Backend ->> DB: Save the new hashed password
+    Backend ->> EmailProvider: Send a confirmation email
+    Backend -->> Frontend: Notify password change success
+    Frontend -->> User: Notify password change success
+
+
+    
 ```
+### II.2 Diagramme de sequence de le cas d'utlisation de << Authenticate>>
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant Frontend
+    participant Backend
+    participant DB
+    participant EmailProvider
+    autonumber
+
+    User ->> Frontend: Request authentication page
+    Frontend -->> User: Return the authentication page
+
+    User ->> Frontend: Fill in the fields
+    Frontend ->> Frontend: Validate the fields
+    Frontend ->> Backend: Send an authentication request
+    Backend ->> Backend: Verifiy the request parameters
+    Backend ->> DB: Search for an account associated with the email and password
+    DB -->> Backend: Return Account details
+    Backend ->> Backend: Compare the passwords
+    Backend ->> Backend: Generate a session
+    Backend -->> DB: Save the session in the database
+    Backend ->> Backend: Generate a JWT
+    Backend ->> EmailProvider: Send an email
+    Backend -->> Frontend: Return user and token
+    Frontend -->> User: Return the dashboard
+```
+
+### II.2 Diagramme de sequence de le cas d'utlisation de << Create ticket >>
+```mermaid
+sequenceDiagram
+    participant User
+    participant Frontend
+    participant Backend
+    participant DB
+    participant EmailProvider
+    autonumber
+
+
+```
+
+1- Utilisateur demander la page de gestion des tickets (Frontend)
+2- Frontennd retrouner la page
+

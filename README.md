@@ -35,7 +35,6 @@
 
 7. **User Management**
    
-   1. 
 
 ### B- Design and Architecture:
 
